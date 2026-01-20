@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password generator</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body class="bg-gray-900 w-full h-full flex flex-col justify-center items-center ">
+   <div class="wrapper  text-white bg-cyan-300">
+    
+        <h1>Password Generator</h1>
+        <div>
+        <input readonly placeholder="password" password-display>
+        <button  copy-btn>
+            <span copy-msg-display></span>
+            <img src="./asset/copy image icon.png" class="size-5">
+        </button>
+         </div>
+         <div class="data-indicator">
+            <h2>Password length</h2>
+            <p pass-length>0</p>
+            <input type="range" max="20" min="1" step="1" slider>
+            </div>
+    
+    <div>
+        <input type="checkbox" id="uppercase" name="uppercase">
+        <label for="uppercase"> Add uppercase latter</label>
+    </div>
+    <div>
+        <input type="checkbox" id="lowercase" name="lowercase">
+        <label for="lowercase"> Add lowercase latter</label>
+    </div>
+    <div>
+        <input type="checkbox" id="numbers" name="numbers">
+        <label for="numbers"> Add Numbers</label>
+    </div>
+    <div>
+        <input type="checkbox" id="symbols" name="symbols">
+        <label for="symbols"> Add Symbols</label>
+    </div>
+<div class="flex gap-50">
+    <p>strength</p>
+    <div class="size-5 rounded-full bg-black" strength-indicator></div>
+</div>
+
+<button class="pass-gen">Generate Password</button>
+
+
+
+
+
+    </div>
+
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
