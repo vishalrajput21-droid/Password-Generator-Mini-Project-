@@ -6,46 +6,60 @@
     <title>password generator</title>
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
-<body class="bg-gray-900 w-full h-full flex flex-col justify-center items-center ">
-   <div class="wrapper  text-white bg-cyan-300">
-    
-        <h1>Password Generator</h1>
+<body class="bg-custom-gradient w-full min-h-screen flex flex-col justify-center items-center ">
         <div>
-        <input readonly placeholder="password" password-display>
-        <button  copy-btn>
-            <span copy-msg-display></span>
-            <img src="./asset/copy image icon.png" class="size-5">
-        </button>
-         </div>
-         <div class="data-indicator">
-            <h2>Password length</h2>
-            <p pass-length>0</p>
-            <input type="range" max="20" min="1" step="1" slider>
-            </div>
     
-    <div>
-        <input type="checkbox" id="uppercase" name="uppercase">
-        <label for="uppercase"> Add uppercase latter</label>
+        <h1 class="font-serif font-bold text-[35px] text-slate-100">Password Generator</h1>
+        <div class="bg-cyan-950  rounded-3xl flex justify-between px-3 py-1.5
+         border-5 border-cyan-800 mt-5">
+        <input readonly placeholder="password" password-display class=" appearance-nonefont-bold text-[20px] text-cyan-100">
+        <button  copy-btn >
+            <span copy-msg-display></span>
+            <img src="./asset/copy image icon.png"
+             class="size-5 rounded-full ">
+        </button>
+         </div> 
+         <div class="bg-cyan-950 relative
+         border-5 rounded-2xl border-cyan-800 mt-5 p-5">
+               <div class="data-indicator flex  justify-between">
+            <h2 class="font-serif font-semibold text-[20px] text-cyan-300 m-1.25">Password length</h2>
+            <p pass-length class="font-serif font-semibold text-[20px] text-cyan-300 m-1.25">0</p>
+        </div>
+            <input type="range" max="20" id="slider" min="1" step="1" slider class="m-5 cursor-pointer appearance-none bg-emerald-950 w-full ">
+        
+    
+    <div class="">
+        <input type="checkbox" id="uppercase" name="uppercase" class=" appearance-none size-5 border-2 border-emerald-300 hover: bg-lime-950">
+        <label for="uppercase" class="font-serif font-semibold text-[18px] text-indigo-100 "> Add uppercase latter</label>
     </div>
-    <div>
+    <div class="">
         <input type="checkbox" id="lowercase" name="lowercase">
-        <label for="lowercase"> Add lowercase latter</label>
+        <label for="lowercase" class="font-serif font-semibold text-[18px] text-indigo-100 "> Add lowercase latter</label>
     </div>
-    <div>
+    <div class="">
         <input type="checkbox" id="numbers" name="numbers">
-        <label for="numbers"> Add Numbers</label>
+        <label for="numbers" class="font-serif font-semibold text-[18px] text-indigo-100 "
+        > Add Numbers</label>
     </div>
-    <div>
+    <div class="">
         <input type="checkbox" id="symbols" name="symbols">
-        <label for="symbols"> Add Symbols</label>
+        <label for="symbols" class="font-serif font-semibold text-[18px] text-indigo-100 "> Add Symbols</label>
     </div>
-<div class="flex gap-50">
-    <p>strength</p>
-    <div class="size-5 rounded-full bg-black" strength-indicator></div>
+<div class="flex justify-between p-5">
+    <p class="font-serif font-bold text-[24px] text-teal-500">strength</p>
+    <div class="size-5 translate-y-2 rounded-full bg-black  animate-pulse" strength-indicator></div>
 </div>
 
-<button class="pass-gen">Generate Password</button>
+<button class="pass-gen border-3  translate-x-14 mt-2
+ border-b-teal-100 border-t-cyan-100
+ text-[18px]
+  text-amber-200
+   px-3 py-1.5
+   rounded-3xl">Generate Password</button>
 
+
+         </div>
+        
 
 
 
