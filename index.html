@@ -10,13 +10,26 @@
         <div>
     
         <h1 class="font-serif font-bold text-[35px] text-slate-100">Password Generator</h1>
-        <div class="bg-cyan-950  rounded-3xl flex justify-between px-3 py-1.5
-         border-5 border-cyan-800 mt-5">
-        <input readonly placeholder="password" password-display class=" appearance-nonefont-bold text-[20px] text-cyan-100">
+        <div class=" flex justify-between
+        relative bg-cyan-950 p-2 rounded-3xl overflow-hidden
+         
+         before:absolute 
+         before:p-0.5
+         before:inset-0 before:rounded-3xl
+          before:bg-size-[300%_300%]
+         before:bg-linear-to-r before:from-orange-300 before:via-green-600 before:to-white
+         
+         before:bg-[gradient_1s_linear_infinite] before:content-['']
+          after:absolute after:inset-0.5
+         after:bg-cyan-950 after:content[''] after:rounded-[30px] transition
+         "
+         
+         >
+        <input readonly placeholder="password" password-display class=" relative z-10 appearance-nonefont-bold text-[20px] text-cyan-100">
         <button  copy-btn >
             <span copy-msg-display></span>
             <img src="./asset/copy image icon.png"
-             class="size-5 rounded-full ">
+             class="size-5 rounded-full relative z-10 ">
         </button>
          </div> 
          <div class="bg-cyan-950 relative
@@ -50,12 +63,26 @@
     <div class="size-5 translate-y-2 rounded-full bg-black  animate-pulse" strength-indicator></div>
 </div>
 
-<button class="pass-gen border-3  translate-x-14 mt-2
- border-b-teal-100 border-t-cyan-100
- text-[18px]
-  text-amber-200
-   px-3 py-1.5
-   rounded-3xl">Generate Password</button>
+<button
+  class="pass-gen relative mt-4 translate-x-14
+         px-6 py-2 rounded-3xl font-semibold text-[18px] text-amber-200
+         bg-cyan-950 overflow-hidden
+         before:absolute before:inset-0 before:rounded-3xl
+         before:p-0.5
+         before:bg-linear-to-r
+         before:from-cyan-900 before:via-teal-300 before:to-purple-500
+         before:bg-size-[300%_300%]
+         before:animate-[gradient_4s_linear_infinite]
+         before:content-['']
+         after:absolute after:inset-0.5 after:rounded-[22px]
+         after:bg-cyan-950 after:content-['']
+         shadow-[0_0_25px_rgba(45,212,191,0.5)]
+         hover:shadow-[0_0_40px_rgba(168,85,247,0.8)]
+         transition"
+>
+  <span class="relative z-10">Generate Password</span>
+</button>
+
 
 
          </div>
