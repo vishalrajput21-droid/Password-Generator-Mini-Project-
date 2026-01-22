@@ -42,7 +42,22 @@ function setIndicator(color){
      strength.style.backgroundColor=color;
      strength.style.shadow=color;
      colourindicator();
-}
+} 
+ function updateSlider() {
+    const value =
+      ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+
+    slider.style.background = `
+      linear-gradient(
+        to right,
+        #10b981 ${value}%,
+        #022c22 ${value}%
+      )
+    `;
+  }
+
+  slider.addEventListener("input", updateSlider);
+  updateSlider();
 
 function colourindicator(){
     let selectUpper=false;
