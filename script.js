@@ -39,7 +39,9 @@ function randomsybols(){
      return symbolsStr[randomIdex];
 };
 function setIndicator(color){
-     strength.Style.backgroundColor=color;
+     strength.style.backgroundColor=color;
+     strength.style.shadow=color;
+     colourindicator();
 }
 
 function colourindicator(){
@@ -51,16 +53,17 @@ function colourindicator(){
     if(lowerCase.checked)selectLower=true;
     if(numbers.checked)selectNumber=true;
     if(symbols.checked)selectSybols=true;
+    
     if (selectUpper && selectLower && selectNumber && selectSybols){
         setIndicator("#00ff00");
     }
-    else if(selectUpper||selectLower||selectNumber||selectSybols){
-        setIndicator("#ff0000");
-    }
-    else if( (selectUpper||selectLower) && selectSybols&& selectNumber){
+    
+    else if( (selectUpper||selectLower) && selectSybols && selectNumber){
         setIndicator("#0000ff");
     }
-
+    else {
+        setIndicator("#ff0000");
+    }
 };
 
 function handleCheckbox(){
@@ -75,7 +78,17 @@ function handleCheckbox(){
 allCheckBox.forEach((checkbox)=>{
     checkbox.addEventListener("change",handleCheckbox);
 })
- 
+  function shufflePassword(password) {
+    let arr = password.split("");
+
+    for (let i = arr.length - 1; i > 0; i--) {
+        let j = randomInt(0, i);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    return arr.join("");
+}
+
 
 passGenBtn.addEventListener("click",()=>{
     if(count==0){
@@ -103,11 +116,12 @@ passGenBtn.addEventListener("click",()=>{
     for(let i=0; i<funarr.length;i++){
         password+=funarr[i]();
     };
-    for(let i = 0; i < passWordLenght; i++){
+    for(let i = 0; i < passWordLenght-funarr.length; i++){
     let randIndex = randomInt(0, funarr.length - 1);
     password += funarr[randIndex]();
 }
-
+       password=shufflePassword(password) ;
     passwordDisplay.value=password;
+    setIndicator();
 
 })
