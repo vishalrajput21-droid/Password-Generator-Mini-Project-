@@ -41,7 +41,7 @@ function randomsybols(){
 function setIndicator(color){
      strength.style.backgroundColor=color;
      strength.style.shadow=color;
-     colourindicator();
+//   colourindicator();
 } 
  function updateSlider() {
     const value =
@@ -137,6 +137,5 @@ passGenBtn.addEventListener("click",()=>{
 }
        password=shufflePassword(password) ;
     passwordDisplay.value=password;
-    setIndicator();
-
+   colourindicator();
 })
